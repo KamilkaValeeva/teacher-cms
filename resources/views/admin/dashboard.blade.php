@@ -1,6 +1,7 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
+
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
@@ -34,14 +35,14 @@
     </a>
   </div>
 
-        <div class="col-sm-6">
-          <a class="btn btn-block btn-default" href="#">Создать Материал</a>
-          <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">Материал первый</h4>
-            <p class="list-group-item-text">Категория</p>
-          </a>
+    <div class="col-sm-6">
+                <a class="btn btn-block btn-default" href="{{route('admin.article.create')}}">Создать запись блога</a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">Материал первый</h4>
+                    <p class="list-group-item-text">Категория</p>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
 @endsection
