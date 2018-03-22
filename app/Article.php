@@ -15,7 +15,6 @@ class Article extends Model
                                     . "-"
                                     . \Carbon\Carbon::now()->format('dmyHi'), '-');
     }
-
     // Polymorphic relation with categories
     public function categories()
     {
@@ -24,5 +23,16 @@ class Article extends Model
     public function scopeLastArticles($query, $count)
     {
         return $query->orderBy('created_at', 'desc')->take($count)->get();
+    }
+    /**
+     * Поиск по записям блога
+     */
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('title', 'like', '%'.$search.'%')
+                      ->orWhere('description_short', 'like', '%'.$search.'%')
+                      ->orWhere('description', 'like', '%'.$search.'%')
+                      ->orWhere('meta_description', 'like', '%'.$search.'%')
+                      ->orWhere('meta_keyword', 'like', '%'.$search.'%');
     }
 }

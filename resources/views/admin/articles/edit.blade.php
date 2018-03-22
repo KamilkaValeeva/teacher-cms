@@ -1,7 +1,5 @@
 @extends('admin.layouts.app_admin')
 
-@extends('admin.layouts.app_admin')
-
 @section('content')
 
 <div class="container">
