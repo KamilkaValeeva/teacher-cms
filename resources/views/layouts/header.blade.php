@@ -22,7 +22,6 @@
                 @include('layouts.top_menu', ['categories' => $categories])
             </ul>
 
-
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
@@ -36,6 +35,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li>
+                              <a href="{{ route('admin.index') }}">Admin panel</a>
+                            </li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
