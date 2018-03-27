@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
+use App\Page;
 class BlogController extends Controller
 {
     public function category($slug)
@@ -28,4 +29,11 @@ class BlogController extends Controller
           'articles' => $article
         ]);
     }
+    public function page($slug)
+{
+    return view('blog.page', [
+      'page' => Page::where('slug', $slug)->first()
+    ]);
+}
+
 }
